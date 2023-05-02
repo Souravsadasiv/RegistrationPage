@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+}
+.star{
+    color: red;
+}
+.container{
+    background: rgb(121, 178, 222);
+    border-radius: 10px;
+}
