@@ -15,7 +15,7 @@
     <h1>Registration Page</h1>
 
     <div class="container col-8 col-lg-5">
-        <form method="post" onsubmit="saveThird();validateThird()" action="/thirdpage.html">
+        <form method="post">
             <label for="photo" class="form-label">Recent PassportSize Photograph(image size less than 4MB)</label>
             <input type="file" accept=".png .jpg .jpeg" max="4MB" class="form-control" name="image" id="my-image"><br>
 
@@ -29,7 +29,7 @@
             <input type="file" accept=".png .jpg .pdf .docs" max="10MB" class="form-control" name="" id=""><br>
 
             <button type="button"> <a href="secondpage.html">Previous Page</a></button>
-            <input type="submit" class="btn btn-primary" id="savethirdpage"></input>
+            <button class="btn btn-primary" onclick="saveThird()">Save</button>
         </form>
     </div>
     <script src="index.js"></script>

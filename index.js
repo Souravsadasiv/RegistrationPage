@@ -137,89 +137,162 @@ function saveThird() {
 
 }
 
-function validateName(nameInput) {
-    let nameInput = document.getElementById("fname").value;
+
+function validateFname() {
+    let nameInput = document.getElementById("fname");
     const namePattern = /^[A-Za-z\s\-]+$/;
-    const nameValue = nameInput.trim();
+    const nameValue = nameInput.value.trim();
     if (!namePattern.test(nameValue)) {
-        nameInput.setCustomValidity('Please enter a valid name.');
+        nameInput.style.border = "solid 3px red";
         return false;
     } else {
-        nameInput.setCustomValidity('');
+        nameInput.style.border = "solid 3px green";
+        return true;
+    }
+}
+function validateLname() {
+    let nameInput = document.getElementById("lname");
+    const namePattern = /^[A-Za-z\s\-]+$/;
+    const nameValue = nameInput.value.trim();
+    if (!namePattern.test(nameValue)) {
+        nameInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        nameInput.style.border = "solid 3px green";
         return true;
     }
 }
 
+function validateF_Fname() {
+    let nameInput = document.getElementById("f_fname");
+    const namePattern = /^[A-Za-z\s\-]+$/;
+    const nameValue = nameInput.value.trim();
+    if (!namePattern.test(nameValue)) {
+        nameInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        nameInput.style.border = "solid 3px green";
+        return true;
+    }
+}
+function validateF_Lname() {
+    let nameInput = document.getElementById("f_lname");
+    const namePattern = /^[A-Za-z\s\-]+$/;
+    const nameValue = nameInput.value.trim();
+    if (!namePattern.test(nameValue)) {
+        nameInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        nameInput.style.border = "solid 3px green";
+        return true;
+    }
+}
 
-//fuction to validate Date of birth
+function validateM_Fname() {
+    let nameInput = document.getElementById("m_fname");
+    const namePattern = /^[A-Za-z\s\-]+$/;
+    const nameValue = nameInput.value.trim();
+    if (!namePattern.test(nameValue)) {
+        nameInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        nameInput.style.border = "solid 3px green";
+        return true;
+    }
+}
+function validateM_Lname() {
+    let nameInput = document.getElementById("m_lname");
+    const namePattern = /^[A-Za-z\s\-]+$/;
+    const nameValue = nameInput.value.trim();
+    if (!namePattern.test(nameValue)) {
+        nameInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        nameInput.style.border = "solid 3px green";
+        return true;
+    }
+}
+
+// //fuction to validate Date of birth
 function validateDOB() {
     let dateOfBirth = document.getElementById("dob");
-    let dob = dateOfBirth.value;
-    let pattern = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
-    if (dob == null || dob == "" || !pattern.test(dob)) {
-        errMessage += "Invalid date of birth\n";
+    const dobValue = dateOfBirth.value;
+    const dobDate = new Date(dobValue);
+    const todayDate = new Date();
+
+    if (dobDate > todayDate) {
+        dateOfBirth.style.border = "solid 3px red";
         return false;
-    }
-    else {
+    } else {
+        dateOfBirth.style.border = "solid 3px green";
         return true;
     }
 }
 
-//function to validate email
-function validateEmail(emailInput) {
-    let emailInput = document.getElementById("email");
+// //function to validate email
+function validateEmail() {
+    let emailInput = document.getElementById("mail");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailValue = emailInput.value.trim();
     if (!emailPattern.test(emailValue)) {
         emailInput.style.border = "solid 3px red";
         return false;
     } else {
-        emailInput.setCustomValidity('');
+        emailInput.style.border = "solid 3px green";
         return true;
     }
 }
-//function to validate mobilenumber
+// //function to validate mobilenumber
 
-function validateMobileNumber(mobileNumberInput) {
+function validateMobileNumber() {
     let mobileNumberInput = document.getElementById("tel-mobile");
     let regx = /[7-9]\d{9}/;
-    if (regx.test(mobileNumberInput)) {
-        return true;
-        console.log("Mobile no is Correct");
-    } else {
+    const mobValue=mobileNumberInput.value.trim();
+    if (!regx.test(mobValue)) {
         mobileNumberInput.style.border = "solid 3px red";
-    }
-}
-
-
-function validateFirstPage() {
-    validateName();
-    validateDOB();
-    validateEmail();
-    validateMobileNumber();
-}
-
-function validatePercentage(percentageInput) {
-    let percentageInput = document.getElementsByClassName("percentage");
-    const percentageValue = parseFloat(percentageInput.value.trim());
-    if (isNaN(percentageValue) || percentageValue < 0 || percentageValue > 100) {
-        percentageInput.setCustomValidity('Please enter a valid percentage between 0 and 100.');
         return false;
     } else {
-        percentageInput.setCustomValidity('');
+        mobileNumberInput.style.border = "solid 3px green";
         return true;
     }
 }
 
 
-function validateSecondPage() {
-    validatePercentage();
+
+function validateHSCPercentage() {
+    let percentageInput = document.getElementById("hsc_percentage");
+    const percentageValue = parseFloat(percentageInput.value.trim());
+    if (isNaN(percentageValue) || percentageValue < 0 || percentageValue > 100) {
+        percentageInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        percentageInput.style.border = "solid 3px green";
+        return true;
+    }
+}
+function validateSSCPercentage() {
+    let percentageInput = document.getElementById("ssc_percentage");
+    const percentageValue = parseFloat(percentageInput.value.trim());
+    if (isNaN(percentageValue) || percentageValue < 0 || percentageValue > 100) {
+        percentageInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        percentageInput.style.border = "solid 3px green";
+        return true;
+    }
+}
+function validateOverallPercentage() {
+    let percentageInput = document.getElementById("percentage");
+    const percentageValue = parseFloat(percentageInput.value.trim());
+    if (isNaN(percentageValue) || percentageValue < 0 || percentageValue > 100) {
+        percentageInput.style.border = "solid 3px red";
+        return false;
+    } else {
+        percentageInput.style.border = "solid 3px green";
+        return true;
+    }
 }
 
-
-function validateThirdPage() {
-
-}
 
 
 

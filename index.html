@@ -15,16 +15,16 @@
     <h1>Registration Page</h1>
 
     <div class="container col-8 col-lg-5">
-        <form method="post" name="myForms" onsubmit="save();validateFirstPage()" action="/secondpage.html">
+        <form method="post" name="myForms">
 
             <label for="name" class="form-label">Name <sup class="star">*</sup></label>
             <div class="row">
                 <div class="col">
-                    <input type="text" id="fname" name="name" minlength="2" maxlength="20" class="form-control name" placeholder="First name" required>
+                    <input type="text" id="fname" name="name" minlength="2" maxlength="20" class="form-control" onkeyup="validateFname()" placeholder="First name" required>
                 </div>
                 
                 <div class="col">
-                    <input type="text" id="lname" name="name" minlength="2" maxlength="20" class="form-control name" placeholder="Last name"required>
+                    <input type="text" id="lname" name="name" minlength="2" maxlength="20" class="form-control" onkeyup="validateLname()"  placeholder="Last name"required>
                 </div>
                 
             </div>
@@ -33,15 +33,15 @@
             <input type="date" class="form-control" id="dob" onchange="validateDOB()" placeholder="MM/DD/YYYY"required>
 
             <label for="email">Email <sup class="star">*</sup> </label>
-            <input type="email" class="form-control" id="mail"required>
+            <input type="email" class="form-control" id="mail" onkeyup="validateEmail()" required>
 
             <label for="fathername">Father's Name <sup class="star">*</sup> </label><br>
             <div class="row">
                 <div class="col">
-                    <input type="text" id="f_fname" minlength="2" maxlength="20" class="form-control name" placeholder="First name"required>
+                    <input type="text" id="f_fname" minlength="2" maxlength="20" class="form-control" onkeyup="validateF_Fname()" placeholder="First name"required>
                 </div>
                 <div class="col">
-                    <input type="text" id="f_lname" minlength="2" maxlength="20" class="form-control name" placeholder="Last name"required>
+                    <input type="text" id="f_lname" minlength="2" maxlength="20" class="form-control" onkeyup="validateF_Lname()" placeholder="Last name"required>
                 </div>
             </div>
 
@@ -49,10 +49,10 @@
             <label for="Mothername">Mother's Name <sup class="star">*</sup> </label><br>
             <div class="row">
                 <div class="col">
-                    <input type="text" id="m_fname" minlength="2" maxlength="20" class="form-control name" placeholder="First name"required>
+                    <input type="text" id="m_fname" minlength="2" maxlength="20" class="form-control" onkeyup="validateM_Fname()" placeholder="First name"required>
                 </div>
                 <div class="col">
-                    <input type="text" id="m_lname" minlength="2" maxlength="20" class="form-control name" placeholder="Last name"required>
+                    <input type="text" id="m_lname" minlength="2" maxlength="20" class="form-control" onkeyup="validateM_Lname()" placeholder="Last name"required>
                 </div>
             </div>
 
@@ -335,11 +335,10 @@
             <input type="number" id="tel-home" class="form-control" placeholder="### ### ####">
 
             <label for="name" class="form-label">Telephone - Mobile <sup class="star">*</sup></label>
-            <input type="mobilenumber" id="tel-mobile" class="form-control" placeholder="### ### ####"  required>
+            <input type="mobilenumber" id="tel-mobile" class="form-control" onkeyup="validateMobileNumber()" placeholder="### ### ####"  required>
 
-
-            <input type="submit" class="btn btn-primary" id="savefirstpage"></input>
-            <button > <a href="secondpage.html">Next Page</a> </button>
+            <button class="btn btn-primary" onclick="save()">Save</button>
+            <button class="btn btn-secondary"> <a href="secondpage.html">Next Page</a> </button>
 
         </form>
     </div>

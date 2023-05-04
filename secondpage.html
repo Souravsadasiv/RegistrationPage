@@ -15,7 +15,7 @@
     <h1>Registration Page</h1>
 
     <div class="container col-8 col-lg-5">
-        <form method="post" onsubmit="saveSecond();validateSecond()" action="/thirdpage.html">
+        <form method="post">
             <label for="institute-name" class="form-label">HSC Institute name</label>
             <input type="text" class="form-control" placeholder="Institute Name" id="hsc_inst" required>
 
@@ -23,7 +23,7 @@
             <input type="text" class="form-control" placeholder="HSC Board" id="hsc_board" required>
 
             <label for="mark" class="form-label">Score in HSC in Percentage</label>
-            <input type="number" class="form-control percentage" placeholder="HSC Percentage" id="hsc_percentage" required>
+            <input type="number" class="form-control percentage" placeholder="HSC Percentage" id="hsc_percentage" onchange="validateHSCPercentage()" required>
 
             <label for="institute-name" class="form-label">SSC Institute name</label>
             <input type="text" class="form-control" placeholder="Institute Name" id="ssc_inst" required>
@@ -32,7 +32,7 @@
             <input type="text" class="form-control" placeholder="SSC Board" id="ssc_board" required>
 
             <label for="mark" class="form-label">Score in SSC in Percentage</label>
-            <input type="number" class="form-control percentage" placeholder="SSC Percentage" id="ssc_percentage" required>
+            <input type="number" class="form-control percentage" placeholder="SSC Percentage" id="ssc_percentage" onchange="validateSSCPercentage()" required>
 
             <label for="" class="form-label">Currently Pursuing</label>
             <input type="text" class="form-control" id="curr_pursuing">
@@ -41,13 +41,13 @@
             <input type="text" class="form-control" placeholder="Institute Name" id="inst_name" required>
 
             <label for="mark" class="form-label">Overall percentage</label>
-            <input type="number" class="form-control percentage" id="percentage" required>
+            <input type="number" class="form-control percentage" id="percentage" onchange="validateOverallPercentage()" required>
 
             <label for="current-backlog" class="form-label">Current backlogs(if any)</label>
             <input type="number" class="form-control" id="backlogs">
 
             <button> <a href="index.html">Previous Page</a> </button>
-            <input type="submit" class="btn btn-primary" id="savesecondpage"></input>
+            <button class="btn btn-primary" onclick="saveSecond()">Save</button>
             <button> <a href="thirdpage.html">Next Page</a> </button>
 
         </form>

@@ -8,3 +8,6 @@ h1{
     background: rgb(121, 178, 222);
     border-radius: 10px;
 }
+a{
+    text-decoration: none;
+}
